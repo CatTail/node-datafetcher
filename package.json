@@ -1,7 +1,7 @@
 {
   "name": "datafetcher",
   "description": "https://github.com/facebook/dataloader",
-  "repository": "CatTail/node-node-datafetcher",
+  "repository": "CatTail/node-datafetcher",
   "version": "1.0.0",
   "keywords": [],
   "files": [
