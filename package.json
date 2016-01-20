@@ -1,0 +1,35 @@
+{
+  "name": "datafetcher",
+  "description": "https://github.com/facebook/dataloader",
+  "repository": "CatTail/node-node-datafetcher",
+  "version": "1.0.0",
+  "keywords": [],
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "babel": "5.8.21",
+    "babel-runtime": "^5.8.x",
+    "babel-core": "5.8.22",
+    "babel-eslint": "^4.1.6",
+    "chai": "^3.4.1",
+    "eslint": "^1.10.3",
+    "mocha": "^2.3.4",
+    "eslint-plugin-babel": "^2.1.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "rare": "^1.1.0"
+  },
+  "main": "dist/index.js",
+  "options": {
+    "mocha": "--require resources/mocha-bootload src/**/__tests__/**/*.js"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run testonly",
+    "testonly": "NODE_ENV=test mocha $npm_package_options_mocha",
+    "lint": "eslint src",
+    "build": "babel src --ignore __tests__ --out-dir dist/",
+    "preversion": "npm test"
+  }
+}
