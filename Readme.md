@@ -1,6 +1,6 @@
 # node-datafetcher [![NPM version][npm-image]][npm-url] [![build status][travis-image]][travis-url] [![Test coverage][coveralls-image]][coveralls-url]
 
-> https://github.com/facebook/dataloader
+> Inspired by https://github.com/facebook/dataloader
 
 ## Installation
 
@@ -8,11 +8,11 @@
 
 ## Usage
 
-DataLoader support batch load and cache, but it's arguments(first argument) should support Object or Array comparation: custom key function will do
-
-DataFetcher:
-
-load:
+    var DataFetcher = require('datafetcher')
+    var fetcher = new DataFetcher(key => Promise.resolve(key))
+    fetcher.fetch('something').then(value => {
+        value === 'something'
+    })
 
 ## License
 
