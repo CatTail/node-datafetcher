@@ -2,7 +2,7 @@
   "name": "datafetcher",
   "description": "https://github.com/facebook/dataloader",
   "repository": "CatTail/node-datafetcher",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [],
   "files": [
     "dist"
