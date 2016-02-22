@@ -14,8 +14,6 @@ var _rare = require('rare');
 
 var _rare2 = _interopRequireDefault(_rare);
 
-var rare = (0, _rare2['default'])({ deep: true });
-
 var DataFetcher = (function () {
     function DataFetcher(fetchFn) {
         _classCallCheck(this, DataFetcher);
@@ -23,6 +21,7 @@ var DataFetcher = (function () {
         if (typeof fetchFn !== 'function') {
             throw new TypeError('DataFetcher must be constructed with a function which ' + ('returns Promise, but got: ' + fetchFn + '.'));
         }
+        this._rare = (0, _rare2['default'])({ deep: true });
         this._fetchFn = fetchFn;
         this._promiseCache = {};
     }
@@ -36,7 +35,7 @@ var DataFetcher = (function () {
                 args[_key] = arguments[_key];
             }
 
-            var cacheKey = rare.apply(null, args);
+            var cacheKey = this._rare.apply(null, args);
             var cachedPromise = this._promiseCache[cacheKey];
 
             if (cachedPromise) {

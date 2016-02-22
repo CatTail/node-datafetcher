@@ -26,7 +26,7 @@
     "mocha": "--require resources/mocha-bootload src/**/__tests__/**/*.js"
   },
   "scripts": {
-    "test": "npm run lint && npm run testonly",
+    "test": "npm run build && npm run lint && npm run testonly",
     "testonly": "NODE_ENV=test mocha $npm_package_options_mocha",
     "lint": "eslint src",
     "build": "babel src --ignore __tests__ --out-dir dist/",
