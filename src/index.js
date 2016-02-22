@@ -1,5 +1,4 @@
 import createRare from 'rare'
-var rare = createRare({deep: true})
 
 export default class DataFetcher {
     constructor(fetchFn) {
@@ -9,12 +8,13 @@ export default class DataFetcher {
                 `returns Promise, but got: ${fetchFn}.`
             )
         }
+        this._rare = createRare({deep: true})
         this._fetchFn = fetchFn
         this._promiseCache = {}
     }
 
     fetch(...args) {
-        var cacheKey = rare.apply(null, args)
+        var cacheKey = this._rare.apply(null, args)
         var cachedPromise = this._promiseCache[cacheKey]
 
         if (cachedPromise) {
